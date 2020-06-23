@@ -5,7 +5,11 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.el.ListELResolver;
+
 // import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Assertions;
 
@@ -20,14 +24,24 @@ public class PedidosTeste {
         }
     @Test
         public void adicionarUmPratoNaLista(){
-            Pedidos p = new Pedidos(0, null, 0.0, 0.0, "", "", "", "", null);
+            List<Prato> listaTeste = new ArrayList<>();
+            Pedidos p = new Pedidos(0, listaTeste, 0.0, 0.0, "", "", "", "", null);
             Prato prato = new Prato("Parmegiana", 30);
             p.addPrato(prato);
-            System.out.println((p.getPratos().toString() ));
+            Assertions.assertTrue(p.getPratos().contains(prato));
         }
 
 
-
+    @Test
+        public void adicionarDoisPratosNaLista(){
+            List<Prato> listaTeste = new ArrayList<>();
+            Pedidos p = new Pedidos(0, listaTeste, 0.0, 0.0, "", "", "", "", null);
+            Prato prato = new Prato("Parmegiana", 30);
+            Prato prato2 = new Prato("Feijoada", 50);
+            p.addPrato(prato);
+            p.addPrato(prato2);
+            Assertions.assertTrue(p.getPratos().contains(prato) && p.getPratos().contains(prato2));
+        }
   
 
     
