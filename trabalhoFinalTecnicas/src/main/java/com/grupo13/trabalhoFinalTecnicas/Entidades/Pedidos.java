@@ -1,6 +1,6 @@
 package com.grupo13.trabalhoFinalTecnicas.Entidades;
 
-import java.text.Normalizer.Form;
+// import java.text.Normalizer.Form;
 import java.util.List;
 
 public class Pedidos {
@@ -14,7 +14,7 @@ public class Pedidos {
     private String bairro;
     private FormasPagamento formasPagamento;
 
-    private Pedidos(int numeroPedido, List<Prato> pratos, double precoPratos, double precoFrete, String nomeClient,
+    public Pedidos(int numeroPedido, List<Prato> pratos, double precoPratos, double precoFrete, String nomeClient,
             String rua, String numero, String bairro, FormasPagamento formasPagamento) {
         this.numeroPedido = numeroPedido;
         this.pratos = pratos;
@@ -36,16 +36,49 @@ public class Pedidos {
         return numeroPedido;
     }
 
+    public void setNumeroPedido(int numeroPedido) {
+        if (numeroPedido < 0.0) {
+            throw new IllegalArgumentException("Número inválido");
+        } else {
+            this.numeroPedido = numeroPedido;
+        }
+    }
+    
     public List<Prato> getPratos(){
         return pratos;
     }
 
-    public double precoFrete(){
+    public void addPrato(Prato prato){
+        pratos.add(prato);
+    }
+
+    public double getPrecoPratos(){
+        return precoPratos;
+    }
+
+    public double getPrecoFrete(){
         return precoFrete;
     }
 
     public String getNomeCliente(){
         return nomeCliente;
     }
+
+    public String getRua(){
+        return rua;
+    }
+
+    public String getNumero(){
+        return numero;
+    }
+
+    public String getBairro(){
+        return bairro;
+    }
+
+    public Enum<FormasPagamento> getFormasPagamento() {
+        return formasPagamento;
+    }
+
 
 }

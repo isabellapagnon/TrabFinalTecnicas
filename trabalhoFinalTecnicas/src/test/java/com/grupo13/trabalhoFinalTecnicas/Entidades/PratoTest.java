@@ -1,9 +1,9 @@
 package com.grupo13.trabalhoFinalTecnicas.Entidades;
 
 import org.junit.jupiter.api.Test;
-import java.lang.Throwable;
+// import java.lang.Throwable;
 import org.springframework.boot.test.context.SpringBootTest;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+// import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Assertions;
 
 @SpringBootTest
