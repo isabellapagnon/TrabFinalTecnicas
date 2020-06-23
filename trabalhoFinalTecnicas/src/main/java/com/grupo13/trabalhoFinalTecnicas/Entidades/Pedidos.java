@@ -1,6 +1,5 @@
 package com.grupo13.trabalhoFinalTecnicas.Entidades;
 
-// import java.text.Normalizer.Form;
 import java.util.List;
 
 public class Pedidos {

@@ -12,4 +12,8 @@ public class Restaurante {
         this.especialidade = especialidade;
         this.pratos = pratos;
     }
+
+    public List<Prato> getPratos(){
+        return pratos;
+    }
 }
