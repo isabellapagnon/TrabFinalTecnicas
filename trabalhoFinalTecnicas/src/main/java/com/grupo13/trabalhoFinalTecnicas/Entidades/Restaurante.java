@@ -2,6 +2,9 @@ package com.grupo13.trabalhoFinalTecnicas.Entidades;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Restaurante {
     private String nome;
     private String especialidade;

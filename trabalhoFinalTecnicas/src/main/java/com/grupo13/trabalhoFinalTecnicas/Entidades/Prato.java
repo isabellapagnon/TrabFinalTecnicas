@@ -1,5 +1,8 @@
 package com.grupo13.trabalhoFinalTecnicas.Entidades;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Prato {
     private String nomePrato;
     private double preco;
