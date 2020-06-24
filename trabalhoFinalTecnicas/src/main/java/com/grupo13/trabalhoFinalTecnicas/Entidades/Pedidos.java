@@ -15,7 +15,7 @@ public class Pedidos {
     private int numeroPedido;
     private List<Prato> pratos;
     private double precoPratos;
-    private double precoFrete;
+    private final double precoFrete = 15;
     private String nomeCliente;
     private String rua;
     private String numero;
@@ -26,7 +26,6 @@ public class Pedidos {
             String rua, String numero, String bairro, FormasPagamento formasPagamento) {
         this.pratos = pratos;
         this.precoPratos = precoPratos;
-        this.precoFrete = precoFrete;
         this.nomeCliente = nomeClient;
         this.rua = rua;
         this.numero = numero;
@@ -42,14 +41,6 @@ public class Pedidos {
     public int getNumeroPedido(){
         return numeroPedido;
     }
-
-    // public void setNumeroPedido(int numeroPedido) {
-    //     if (numeroPedido < 0.0) {
-    //         throw new IllegalArgumentException("Número inválido");
-    //     } else {
-    //         this.numeroPedido = numeroPedido;
-    //     }
-    // }
     
     public List<Prato> getPratos(){
         return pratos;
