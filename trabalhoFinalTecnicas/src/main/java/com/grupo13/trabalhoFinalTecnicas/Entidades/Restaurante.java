@@ -3,6 +3,7 @@ package com.grupo13.trabalhoFinalTecnicas.Entidades;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Restaurante {
