@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 // import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Assertions;
 
-@SpringBootTest
+@SpringBootTest(classes=com.grupo13.trabalhoFinalTecnicas.Entidades.PratoTest.class)
 public class PratoTest {
 
     @Test

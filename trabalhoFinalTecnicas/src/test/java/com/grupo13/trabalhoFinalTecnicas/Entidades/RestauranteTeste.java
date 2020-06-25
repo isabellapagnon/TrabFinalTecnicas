@@ -8,8 +8,7 @@ import java.util.List;
 import javax.el.ListELResolver;
 import org.junit.jupiter.api.Assertions;
 
-@SpringBootTest
-
+@SpringBootTest(classes = com.grupo13.trabalhoFinalTecnicas.Entidades.RestauranteTeste.class)
 public class RestauranteTeste {
     @Test
         public void adicionarUmPratoNaLista(){

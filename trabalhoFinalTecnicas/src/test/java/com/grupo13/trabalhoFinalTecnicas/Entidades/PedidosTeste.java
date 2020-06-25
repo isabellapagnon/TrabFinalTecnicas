@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
 
-@SpringBootTest
+@SpringBootTest(classes = com.grupo13.trabalhoFinalTecnicas.Entidades.PedidosTeste.class)
 public class PedidosTeste {
 
     @Test
