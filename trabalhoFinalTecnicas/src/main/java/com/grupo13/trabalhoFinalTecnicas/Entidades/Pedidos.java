@@ -51,6 +51,11 @@ public class Pedidos {
     }
 
     public double getPrecoPratos(){
+        double total = 0;
+        for (int i = 0; i < pratos.size(); i++) {
+            total = total + pratos.get(i).getPreco();
+        }
+        this.precoPratos = total;
         return precoPratos;
     }
 
