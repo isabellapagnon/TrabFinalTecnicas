@@ -29,4 +29,23 @@ public class PedidosTeste {
         Assertions.assertTrue(p.getPratos().contains(prato) && p.getPratos().contains(prato2));
     }
 
+    @Test
+    public void calculaPrecoUmPrato() {
+        List<Prato> listaTeste = new ArrayList<>();
+        Prato prato = new Prato("Parmegiana", 30);
+        listaTeste.add(prato);
+        Pedidos p = new Pedidos(listaTeste, 0.0, 0.0, "", "", "", "", null);
+        Assertions.assertEquals(30, p.getPrecoPratos());
+    }
+
+@Test
+    public void calculaPrecoDoisPratos() {
+        List<Prato> listaTeste = new ArrayList<>();
+        Prato prato = new Prato("Parmegiana", 30);
+        Prato prato2 = new Prato("Feijoada", 50);
+        listaTeste.add(prato);
+        listaTeste.add(prato2);
+        Pedidos p = new Pedidos(listaTeste, 0.0, 0.0, "", "", "", "", null);
+        Assertions.assertEquals(80, p.getPrecoPratos());
+    }
 }
