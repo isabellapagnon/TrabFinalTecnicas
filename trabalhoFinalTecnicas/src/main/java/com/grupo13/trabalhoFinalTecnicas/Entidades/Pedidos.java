@@ -47,7 +47,18 @@ public class Pedidos {
     }
 
     public void addPrato(Prato prato){
-        pratos.add(prato);
+        if (pratos.isEmpty()) {
+            pratos.add(prato);
+        } else {
+            for (int i = 0; i < pratos.size(); i++) {
+                if (prato.getNome().equals(pratos.get(i).getNome())) {
+                    pratos.get(i).setQuantidade(prato.getQuantidade());
+                }
+                else {
+                    pratos.add(prato);
+                }
+            }
+        }
     }
 
     public double getPrecoPratos(){

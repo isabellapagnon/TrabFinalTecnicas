@@ -19,7 +19,7 @@ public class CasosDeUsoTeste {
     public void testaPoliticaDescontoFalse() {
         List<Prato> listaTeste = new ArrayList<>();
         Pedidos pedido = new Pedidos(listaTeste, 0, 0, "", "", "", "", FormasPagamento.CARTÃO);
-        Prato prato = new Prato("Parmegiana", 30);
+        Prato prato = new Prato(1, "Parmegiana", 30, 1);
         pedido.addPrato(prato);
         PoliticaDesconto p = new PoliticaDesconto();
         Assertions.assertEquals(false, p.desconto10(pedido));
@@ -29,12 +29,12 @@ public class CasosDeUsoTeste {
     public void testaPoliticaDescontoTrue() {
         List<Prato> listaTeste = new ArrayList<>();
         Pedidos pedido = new Pedidos(listaTeste, 0, 0, "", "", "", "", FormasPagamento.CARTÃO);
-        Prato prato = new Prato("Parmegiana", 30);
-        Prato prato2 = new Prato("Feijoada", 50);
-        Prato prato3 = new Prato("Nhoque ao Molho Funghi", 45);
-        Prato prato4 = new Prato("Tortei de Ábobora", 40);
-        Prato prato5 = new Prato("Lasanha ao Molho Vermelho", 70);
-        Prato prato6 = new Prato("Lasanha ao Molho Quatro Queijos", 80);
+        Prato prato = new Prato(1, "Parmegiana", 30, 1);
+        Prato prato2 = new Prato(2, "Feijoada", 50, 1);
+        Prato prato3 = new Prato(3, "Nhoque ao Molho Funghi", 45, 1);
+        Prato prato4 = new Prato(4, "Tortei de Ábobora", 40, 1);
+        Prato prato5 = new Prato(5, "Lasanha ao Molho Vermelho", 70, 1);
+        Prato prato6 = new Prato(6,"Lasanha ao Molho Quatro Queijos", 80, 1);
         pedido.addPrato(prato);
         pedido.addPrato(prato2);
         pedido.addPrato(prato3);
@@ -49,8 +49,8 @@ public class CasosDeUsoTeste {
     public void testaPoliticaFreteGratisTrue() {
         List<Prato> listaTeste = new ArrayList<>();
         Pedidos pedido = new Pedidos(listaTeste, 0, 0, "", "", "", "", FormasPagamento.CARTÃO);
-        Prato prato = new Prato("Parmegiana", 30);
-        Prato prato2 = new Prato("Feijoada", 50);
+        Prato prato = new Prato(1, "Parmegiana", 30, 1);
+        Prato prato2 = new Prato(2, "Feijoada", 50, 1);
         pedido.addPrato(prato);
         pedido.addPrato(prato2);
         PoliticaFrete p = new PoliticaFrete();
@@ -61,7 +61,7 @@ public class CasosDeUsoTeste {
     public void testaPoliticaFreteGratisFalse() {
         List<Prato> listaTeste = new ArrayList<>();
         Pedidos pedido = new Pedidos(listaTeste, 0, 0, "", "", "", "", FormasPagamento.CARTÃO);
-        Prato prato = new Prato("Parmegiana", 30);
+        Prato prato = new Prato(1, "Parmegiana", 30, 1);
         pedido.addPrato(prato);
         PoliticaFrete p = new PoliticaFrete();
         Assertions.assertEquals(false, p.freteGratis(pedido));
@@ -71,7 +71,7 @@ public class CasosDeUsoTeste {
     public void testaPoliticaCustoTotalSemFreteGratisSemDesconto() {
         List<Prato> listaTeste = new ArrayList<>();
         Pedidos pedido = new Pedidos(listaTeste, 0, 0, "", "", "", "", FormasPagamento.CARTÃO);
-        Prato prato = new Prato("Parmegiana", 30);
+        Prato prato = new Prato(1, "Parmegiana", 30, 1);
         pedido.addPrato(prato);
         PoliticaCustoTotal p = new PoliticaCustoTotal();
         Assertions.assertEquals(45, p.custoTotal(pedido));
@@ -81,8 +81,8 @@ public class CasosDeUsoTeste {
     public void testaPoliticaCustoTotalComFreteGratisSemDesconto() {
         List<Prato> listaTeste = new ArrayList<>();
         Pedidos pedido = new Pedidos(listaTeste, 0, 0, "", "", "", "", FormasPagamento.CARTÃO);
-        Prato prato = new Prato("Parmegiana", 30);
-        Prato prato2 = new Prato("Nhoque ao Molho Funghi", 45);
+        Prato prato = new Prato(1, "Parmegiana", 30, 1);
+        Prato prato2 = new Prato(3, "Nhoque ao Molho Funghi", 45, 1);
         pedido.addPrato(prato);
         pedido.addPrato(prato2);
         PoliticaCustoTotal p = new PoliticaCustoTotal();
@@ -93,13 +93,34 @@ public class CasosDeUsoTeste {
     public void testaPoliticaCustoTotalComFreteGratisComDesconto() {
         List<Prato> listaTeste = new ArrayList<>();
         Pedidos pedido = new Pedidos(listaTeste, 0, 0, "", "", "", "", FormasPagamento.CARTÃO);
-        Prato prato = new Prato("Parmegiana", 30);
-        Prato prato2 = new Prato("Nhoque ao Molho Funghi", 45);
-        Prato prato3 = new Prato("Lasanha ao Molho Vermelho", 70);
+        Prato prato = new Prato(1, "Parmegiana", 30, 1);
+        Prato prato2 = new Prato(3, "Nhoque ao Molho Funghi", 45, 1);
+        Prato prato3 = new Prato(5, "Lasanha ao Molho Vermelho", 70, 1);
         pedido.addPrato(prato);
         pedido.addPrato(prato2);
         pedido.addPrato(prato3);
         PoliticaCustoTotal p = new PoliticaCustoTotal();
         Assertions.assertEquals(144,99, p.custoTotal(pedido));
+    }
+
+    @Test
+    public void testaPoliticaPedidoMaximo() {
+        List<Prato> listaTeste = new ArrayList<>();
+        Pedidos pedido = new Pedidos(listaTeste, 0, 0, "", "", "", "", FormasPagamento.CARTÃO);
+        Prato prato = new Prato(1, "Parmegiana", 30, 1);
+        Prato prato2 = new Prato(1, "Parmegiana", 30, 1);
+        Prato prato3 = new Prato(1, "Parmegiana", 30, 1);
+        Prato prato4 = new Prato(1, "Parmegiana", 30, 1);
+        Prato prato5 = new Prato(1, "Parmegiana", 30, 1);
+        Prato prato6 = new Prato(1, "Parmegiana", 30, 1);
+        pedido.addPrato(prato);
+        pedido.addPrato(prato2);
+        pedido.addPrato(prato3);
+        pedido.addPrato(prato4);
+        pedido.addPrato(prato5);
+        pedido.addPrato(prato6);
+        PoliticaPedidoMaximo p = new PoliticaPedidoMaximo();
+        Assertions.assertThrows(IllegalArgumentException.class, () -> { p.verificarPedidoMaximo(pedido);
+        });
     }
 }
