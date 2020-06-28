@@ -1,0 +1,28 @@
+<h2>Pedido</h2>
+
+<div>
+  <label> Nome Cliente:
+    <input #pedidoNomeCliente />
+  </label>
+  <label> Rua:
+    <input #pedidoRua />
+  </label>
+  <label> Número:
+    <input #pedidoNumero />
+  </label>
+  <label> Bairro:
+    <input #pedidoBairro />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="save()">save</button>
+    
+</div>
+
+<ul class="pedidos">
+  <li *ngFor="let pedido of pedidos">
+    <a routerLink="/pedido/{{pedido.id}}">
+      <span class="badge">{{pedido.id}}</span>
+    </a>
+    <!-- <button class="delete" title="delete prato" (click)="delete(prato)">x</button> -->
+  </li>
+</ul>

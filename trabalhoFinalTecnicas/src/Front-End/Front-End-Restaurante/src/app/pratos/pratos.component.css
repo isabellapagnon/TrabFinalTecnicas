@@ -1,8 +1,8 @@
 .pratos {
     margin: 0 0 2em 0;
     list-style-type: none;
-    padding: 0;
-    width: 15em;
+    padding: 1;
+    width: 20em;
   }
   .pratos li {
     position: relative;
@@ -50,7 +50,7 @@
   }
   
   button {
-    background-color: #eee;
+    background-color: gray;
     border: none;
     padding: 5px 10px;
     border-radius: 4px;
@@ -64,9 +64,9 @@
   }
   
   button.delete {
-    position: relative;
-    left: 194px;
-    top: -32px;
+    position: absolute;
+    left: 250px;
+    top: -1px;
     background-color: gray !important;
     color: white;
   }

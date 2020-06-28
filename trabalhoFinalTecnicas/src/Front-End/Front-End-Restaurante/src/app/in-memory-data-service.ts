@@ -18,8 +18,26 @@ export class InMemoryDataService implements InMemoryDbService {
     return {pratos};
   }
 
+  createDb2() {
+    const pedido = [
+        {
+            id: 100,
+          //  pratos: [11,'Frango à Parmegiana', 49.99],
+            precoPrato: 49.99,
+            precoFrete: 15,
+            nomeCliente: 'John Smith',
+            rua: 'Rua1',
+            numero: '1780',
+            bairro: 'Bairro1',
+            formaDePagamento: 'Cartão'
+        }
+    ];
+    return {pedido};
+  }
+
   genId(pratos: Prato[]): number {
     return pratos.length > 0 ? Math.max(...pratos.map(prato => prato.id)) + 1 : 11;
   }
 }
+
 

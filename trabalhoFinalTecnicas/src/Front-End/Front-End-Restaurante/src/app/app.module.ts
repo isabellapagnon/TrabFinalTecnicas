@@ -6,6 +6,7 @@ import { FormsModule }    from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data-service';
+//import { InMemoryDataService2 } from './in-memory-data-2-service';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -15,6 +16,8 @@ import { PratoDetailComponent } from './prato-detail/prato-detail.component';
 import { PratoSearchComponent } from './prato-search/prato-search.component';
 import { PratosComponent } from './pratos/pratos.component';
 import { MessagesComponent } from './messages/messages.component';
+import { PedidoDetailComponent } from './pedido-detail/pedido-detail.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { MessagesComponent } from './messages/messages.component';
     PratoDetailComponent,
     PratoSearchComponent,
     PratosComponent,
-    MessagesComponent
+    MessagesComponent,
+    PedidoDetailComponent,
+    PedidosComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,17 @@
+<div *ngIf="pedido">
+    <h2>Numero do pedido:{{pedido.id | uppercase}}</h2>
+     <div><span>Preço dos Pratos: </span>{{pedido.precoPrato}}</div>
+     <div><span>Preço do Frete: </span>{{pedid.precoFrete}}</div>
+     <div><span>Nome cliente: </span>{{pedido.nomeCliente}}</div>
+     <div><span>Rua: </span>{{pedido.rua}}</div>
+     <div><span>Numero: </span>{{pedido.numero}}</div>
+     <div><span>Bairro: </span>{{pedido.bairro}}</div>
+     <div><span>Forma de Pagamento: </span>{{pedido.formaDePagamento}}</div>
+    <div>
+      <!-- <label>Prato:
+        <input [(ngModel)]="prato.nome" placeholder="nome"/>
+      </label> -->
+    </div>
+    <button (click)="goBack()">go back</button>
+    <button (click)="save()">save</button>
+  </div>
