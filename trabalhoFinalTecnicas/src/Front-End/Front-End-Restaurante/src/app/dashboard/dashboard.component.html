@@ -1,0 +1,11 @@
+<h3>Pratos da semana</h3>
+<div class="grid grid-pad">
+    <a *ngFor="let prato of pratos" class="col-1-4"
+        routerLink="/detail/{{prato.id}}">
+      <div class="module prato">
+        <h4>{{prato.nome}}</h4>
+      </div>
+    </a>
+  </div>
+  
+  <app-prato-search></app-prato-search>
