@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class ServicoConsultaPedido {
     private RepositorioPedido repositorioPedido;
-    private PoliticaCustoTotal politicaCustoTotal;
+   // private PoliticaCustoTotal politicaCustoTotal;
     private Pedidos ped;
 
     @Autowired
-    public ServicoConsultaPedido(RepositorioPedido repositorioPedido, PoliticaCustoTotal politicaCustoTotal) {
+    public ServicoConsultaPedido(RepositorioPedido repositorioPedido) {
         this.repositorioPedido = repositorioPedido;
-        this.politicaCustoTotal = politicaCustoTotal;
+       // this.politicaCustoTotal = politicaCustoTotal;
     }
 
     public Pedidos getDadosPedido(int numeroPedido) {

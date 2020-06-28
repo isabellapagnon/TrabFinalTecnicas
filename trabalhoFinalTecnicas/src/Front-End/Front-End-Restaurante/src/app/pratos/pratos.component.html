@@ -1,0 +1,20 @@
+<h2> Pratos</h2>
+
+<div>
+  <label> Nome do prato:
+    <input #pratoNome />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(pratoNome.value); pratoNome.value=''">
+    add
+  </button>
+</div>
+
+<ul class="pratos">
+  <li *ngFor="let prato of pratos">
+    <a routerLink="/detail/{{prato.id}}">
+      <span class="badge">{{prato.id}}</span> {{prato.nome}}
+    </a>
+    <button class="delete" title="delete prato" (click)="delete(prato)">x</button>
+  </li>
+</ul>

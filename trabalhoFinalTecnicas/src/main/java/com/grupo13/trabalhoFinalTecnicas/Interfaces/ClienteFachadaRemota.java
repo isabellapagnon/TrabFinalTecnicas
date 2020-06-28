@@ -36,8 +36,8 @@ public class ClienteFachadaRemota {
 
     @CrossOrigin(origins = "*")
     @GetMapping("/dadosPrato")
-    public Prato getDadosPrato(String nomePrato){
-        Prato prato = servicoConsultaPrato.getDadosPrato(nomePrato);
+    public Prato getDadosPrato(int id){
+        Prato prato = servicoConsultaPrato.getDadosPrato(id);
         return prato;
     }
 

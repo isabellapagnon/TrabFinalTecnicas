@@ -3,7 +3,6 @@ package com.grupo13.trabalhoFinalTecnicas.CasosDeUso;
 import com.grupo13.trabalhoFinalTecnicas.Entidades.Prato;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,8 +18,8 @@ public class ServicoConsultaPrato {
         prato = null;
     }
 
-    public Prato getDadosPrato(String nomePrato) {
-        List<Prato> pratos = repositorioPrato.findByName(nomePrato);
+    public Prato getDadosPrato(int id) {
+        List<Prato> pratos = repositorioPrato.findById(id);
         if (pratos.isEmpty()) {
             throw new IllegalArgumentException("Prato nao encontrado");
         } else {
@@ -31,7 +30,7 @@ public class ServicoConsultaPrato {
     }
 
     public List<Prato> listarTodosPratos() {
-        List<Prato> pratos = repositorioRestaurante.findAllPratos();
+        List<Prato> pratos = repositorioRestaurante.findAll();
         return pratos;
     }
 

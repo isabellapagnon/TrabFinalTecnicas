@@ -2,13 +2,17 @@ package com.grupo13.trabalhoFinalTecnicas.Entidades;
 
 import java.util.List;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+
 @Entity
 public class Restaurante {
+    @Id
     private String nome;
     private String especialidade;
+    @ElementCollection(targetClass=Prato.class)
     private List<Prato> pratos;
 
     public Restaurante(String nome, String especialidade, List<Prato> pratos) {

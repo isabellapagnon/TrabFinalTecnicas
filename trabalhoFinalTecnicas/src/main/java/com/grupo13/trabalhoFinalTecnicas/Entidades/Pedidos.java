@@ -1,5 +1,6 @@
 package com.grupo13.trabalhoFinalTecnicas.Entidades;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +14,7 @@ public class Pedidos {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int numeroPedido;
+    @ElementCollection(targetClass=Prato.class)
     private List<Prato> pratos;
     private double precoPratos;
     private final double precoFrete = 15;
