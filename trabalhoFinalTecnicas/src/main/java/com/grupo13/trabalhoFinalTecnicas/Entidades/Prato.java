@@ -1,18 +1,20 @@
 package com.grupo13.trabalhoFinalTecnicas.Entidades;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
 public class Prato {
     @Id
-    private int pratoID;
+    private int id;
+    @Column(unique=true)
     private String nomePrato;
     private double preco;
     private int quantidade;
 
-    public Prato(int pratoID, String nomePrato, double preco, int quantidade) {
-        this.pratoID = pratoID;
+    public Prato(int id, String nomePrato, double preco, int quantidade) {
+        this.id = id;
         this.nomePrato = nomePrato;
         this.preco = preco;
         this.quantidade = quantidade;
@@ -28,8 +30,8 @@ public class Prato {
         return new Prato(pratoID, nomePrato, preco, quantidade);
     }
 
-    public String getPratoID() {
-        return nomePrato;
+    public int getId() {
+        return id;
     }
 
     public String getNome() {
