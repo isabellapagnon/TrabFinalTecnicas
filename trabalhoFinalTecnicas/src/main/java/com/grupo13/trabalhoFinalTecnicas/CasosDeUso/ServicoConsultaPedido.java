@@ -18,8 +18,8 @@ public class ServicoConsultaPedido {
        // this.politicaCustoTotal = politicaCustoTotal;
     }
 
-    public Pedidos getDadosPedido(int numeroPedido) {
-        List<Pedidos> pedidos = repositorioPedido.findByNumeroPedido(numeroPedido);
+    public Pedidos getDadosPedido(int id) {
+        List<Pedidos> pedidos = repositorioPedido.findById(id);
         if (pedidos.isEmpty()) {
             throw new IllegalArgumentException("Pedido nao encontrado");
         } else {

@@ -13,7 +13,7 @@ import java.util.List;
 public class Pedidos {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int numeroPedido;
+    private int id;
     @ElementCollection(targetClass=Prato.class)
     private List<Prato> pratos;
     private double precoPratos;
@@ -24,11 +24,13 @@ public class Pedidos {
     private String bairro;
     private FormasPagamento formasPagamento;
 
-    public Pedidos(List<Prato> pratos, double precoPratos, double precoFrete, String nomeClient,
+    protected Pedidos(){}
+
+    public Pedidos(List<Prato> pratos, double precoPratos, double precoFrete, String nomeCliente,
             String rua, String numero, String bairro, FormasPagamento formasPagamento) {
         this.pratos = pratos;
         this.precoPratos = precoPratos;
-        this.nomeCliente = nomeClient;
+        this.nomeCliente = nomeCliente;
         this.rua = rua;
         this.numero = numero;
         this.bairro = bairro;
@@ -40,8 +42,8 @@ public class Pedidos {
         return new Pedidos( null, 0.0, 0.0, nomeCliente, rua, numero, bairro, formasPagamento);
     }
 
-    public int getNumeroPedido(){
-        return numeroPedido;
+    public int getId(){
+        return id;
     }
     
     public List<Prato> getPratos(){

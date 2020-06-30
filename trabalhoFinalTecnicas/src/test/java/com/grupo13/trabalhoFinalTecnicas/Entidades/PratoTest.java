@@ -11,7 +11,7 @@ public class PratoTest {
 
     @Test
         public void setPrecoInvalido(){
-            Prato p = new Prato(1, "Parmegiana", 38, 1);
+            Prato p = new Prato("Parmegiana", 38, 1);
             //p.setPreco(-38);
             Assertions.assertThrows(IllegalArgumentException.class, () -> { p.setPreco(-38);
             });
@@ -19,15 +19,15 @@ public class PratoTest {
 
     @Test
     public void criarPrecoInvalido(){
-        Prato p = new Prato(1, "Parmegiana", -38, 1);
-        Assertions.assertThrows(IllegalArgumentException.class, () -> { p.criaNovoPrato(1, "Parmegiana",-38, 1);
+        Prato p = new Prato("Parmegiana", -38, 1);
+        Assertions.assertThrows(IllegalArgumentException.class, () -> { p.criaNovoPrato("Parmegiana",-38, 1);
         });
     }
 
     @Test
     public void criarNomeInválido(){
-        Prato p = new Prato(0, null, 38, 1);
-        Assertions.assertThrows(IllegalArgumentException.class, () -> { p.criaNovoPrato(0, null,38, 1);
+        Prato p = new Prato(null, 38, 1);
+        Assertions.assertThrows(IllegalArgumentException.class, () -> { p.criaNovoPrato(null,38, 1);
         });
     }
 

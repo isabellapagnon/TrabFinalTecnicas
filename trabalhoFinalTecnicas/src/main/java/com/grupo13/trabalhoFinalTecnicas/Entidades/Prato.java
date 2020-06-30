@@ -1,33 +1,36 @@
 package com.grupo13.trabalhoFinalTecnicas.Entidades;
 
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Prato {
     @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
-    @Column(unique=true)
-    private String nomePrato;
+    private String nome;
     private double preco;
     private int quantidade;
+    
+    protected Prato(){}
 
-    public Prato(int id, String nomePrato, double preco, int quantidade) {
-        this.id = id;
-        this.nomePrato = nomePrato;
+    public Prato(String nome, double preco, int quantidade) {
+        this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
     }
 
-    public static Prato criaNovoPrato(int pratoID, String nomePrato, double preco, int quantidade) {
+    public static Prato criaNovoPrato(String nome, double preco, int quantidade) {
         if(preco < 0.0){
             throw new IllegalArgumentException("Preço inválido");
         }
-        if(nomePrato == null){
+        if(nome == null){
             throw new IllegalArgumentException("Nome do Prato inválido");
         }
-        return new Prato(pratoID, nomePrato, preco, quantidade);
+        return new Prato(nome, preco, quantidade);
     }
 
     public int getId() {
@@ -35,7 +38,7 @@ public class Prato {
     }
 
     public String getNome() {
-        return nomePrato;
+        return nome;
     }
 
     public double getPreco() {
