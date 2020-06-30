@@ -14,7 +14,7 @@ public class RestauranteTeste {
         public void adicionarUmPratoNaLista(){
             List<Prato> listaTeste = new ArrayList<>();
             Restaurante r = new Restaurante("Salvatore", "Comida Italiana", listaTeste);
-            Prato prato = new Prato(1, "Parmegiana", 30, 1);
+            Prato prato = new Prato("Parmegiana", 30, 1);
             r.addPrato(prato);
             Assertions.assertTrue(r.getPratos().contains(prato));
         }
@@ -24,8 +24,8 @@ public class RestauranteTeste {
         public void adicionarDoisPratosNaLista(){
             List<Prato> listaTeste = new ArrayList<>();
             Restaurante r = new Restaurante("Salvatore", "Comida Italiana", listaTeste);
-            Prato prato = new Prato(1, "Parmegiana", 30, 1);
-            Prato prato2 = new Prato(2, "Feijoada", 50, 1);
+            Prato prato = new Prato("Parmegiana", 30, 1);
+            Prato prato2 = new Prato("Feijoada", 50, 1);
             r.addPrato(prato);
             r.addPrato(prato2);
             Assertions.assertTrue(r.getPratos().contains(prato) && r.getPratos().contains(prato2));

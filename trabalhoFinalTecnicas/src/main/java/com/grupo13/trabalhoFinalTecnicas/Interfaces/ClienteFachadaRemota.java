@@ -29,14 +29,14 @@ public class ClienteFachadaRemota {
     }
     @CrossOrigin(origins = "*")
     @GetMapping("/dadosPedido")
-    public Pedidos getDadosPedido(@RequestParam int numeroPedido){
-        Pedidos pedido = servicoConsultaPedido.getDadosPedido(numeroPedido);
+    public Pedidos getDadosPedido(@RequestParam int id){
+        Pedidos pedido = servicoConsultaPedido.getDadosPedido(id);
         return pedido;
     }
 
     @CrossOrigin(origins = "*")
     @GetMapping("/dadosPrato")
-    public Prato getDadosPrato(int id){
+    public Prato getDadosPrato(@RequestParam int id){
         Prato prato = servicoConsultaPrato.getDadosPrato(id);
         return prato;
     }
