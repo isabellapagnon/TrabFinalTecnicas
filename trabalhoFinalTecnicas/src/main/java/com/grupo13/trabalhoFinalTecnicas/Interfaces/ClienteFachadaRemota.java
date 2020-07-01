@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.grupo13.trabalhoFinalTecnicas.CasosDeUso.ServicoConsultaPedido;
 import com.grupo13.trabalhoFinalTecnicas.CasosDeUso.ServicoConsultaPrato;
+import com.grupo13.trabalhoFinalTecnicas.Entidades.FormasPagamento;
 import com.grupo13.trabalhoFinalTecnicas.Entidades.Pedidos;
 import com.grupo13.trabalhoFinalTecnicas.Entidades.Prato;
 
@@ -47,6 +48,11 @@ public class ClienteFachadaRemota {
         List<Prato> pratos = servicoConsultaPrato.listarTodosPratos();
         return pratos;
     }
+    // @CrossOrigin(origins = "*")
+    // @GetMapping("/todosPratos")
+    // public Pedidos criarPedido(@RequestParam String nomeCliente,@RequestParam String rua,@RequestParam String numero,@RequestParam String bairro,@RequestParam FormasPagamento formasPagamento){
+    //     return Pedidos.createNewPedido(nomeCliente, rua, numero, bairro, formasPagamento);
+    // }
+}
 
     
-}
