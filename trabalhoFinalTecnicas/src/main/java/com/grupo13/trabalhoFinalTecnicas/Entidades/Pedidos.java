@@ -1,27 +1,39 @@
 package com.grupo13.trabalhoFinalTecnicas.Entidades;
 
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-// import java.text.Normalizer.Form;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.List;
 
+
+@Table(name = "pedidos")
 @Entity
 public class Pedidos {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    @ElementCollection(targetClass=Prato.class)
+    private int iid;
+
+    @JoinColumn(name = "prato_id")
+    @OneToMany
+    //@JoinTable(name = "prato")
     private List<Prato> pratos;
+
     private double precoPratos;
+
     private final double precoFrete = 15;
+
     private String nomeCliente;
+
     private String rua;
+
     private String numero;
+
     private String bairro;
+
     private FormasPagamento formasPagamento;
 
     protected Pedidos(){}
@@ -38,12 +50,12 @@ public class Pedidos {
 
     }
 
-    public static Pedidos createNewPedido(String nomeCliente, String rua, String numero, String bairro, FormasPagamento formasPagamento){
+    public Pedidos createNewPedido(String nomeCliente, String rua, String numero, String bairro, FormasPagamento formasPagamento){
         return new Pedidos( null, 0.0, 0.0, nomeCliente, rua, numero, bairro, formasPagamento);
     }
 
     public int getId(){
-        return id;
+        return iid;
     }
     
     public List<Prato> getPratos(){

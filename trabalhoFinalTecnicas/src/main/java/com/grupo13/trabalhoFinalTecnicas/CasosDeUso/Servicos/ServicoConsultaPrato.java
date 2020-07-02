@@ -1,5 +1,7 @@
-package com.grupo13.trabalhoFinalTecnicas.CasosDeUso;
+package com.grupo13.trabalhoFinalTecnicas.CasosDeUso.Servicos;
 
+import com.grupo13.trabalhoFinalTecnicas.CasosDeUso.Respositorios.RepositorioPrato;
+import com.grupo13.trabalhoFinalTecnicas.CasosDeUso.Respositorios.RepositorioRestaurante;
 import com.grupo13.trabalhoFinalTecnicas.Entidades.Prato;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

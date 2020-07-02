@@ -2,6 +2,9 @@ package com.grupo13.trabalhoFinalTecnicas.Entidades;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import static org.junit.jupiter.api.Assertions.assertAll;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,4 +33,37 @@ public class RestauranteTeste {
             r.addPrato(prato2);
             Assertions.assertTrue(r.getPratos().contains(prato) && r.getPratos().contains(prato2));
         }
+
+
+
+
+        //Testes de Get e Set apenas para aumentar o percentual de CodeCoverge nas linhas
+
+        @Test
+        public void getNome(){
+            Restaurante rest = new Restaurante("nome", "especialidade", null);
+            Assertions.assertEquals("nome", rest.getNome());
+        }
+
+        @Test
+        public void getEspecialidade(){
+            Restaurante rest = new Restaurante("nome", "especialidade", null);
+            Assertions.assertEquals("especialidade", rest.getEspecialidade());
+        }
+
+        @Test
+        public void setNome(){
+            Restaurante rest = new Restaurante("nome", "especialidade", null);
+            rest.setNome("nome2");
+            Assertions.assertEquals("nome2", rest.getNome());
+        }
+
+        @Test
+        public void setEspecialidade(){
+            Restaurante rest = new Restaurante("nome", "especialidade", null);
+            rest.setEspecialidade("especialidade2");
+            Assertions.assertEquals("especialidade2", rest.getEspecialidade());
+        }
+
+
 }

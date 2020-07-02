@@ -1,4 +1,4 @@
-package com.grupo13.trabalhoFinalTecnicas.CasosDeUso;
+package com.grupo13.trabalhoFinalTecnicas.CasosDeUso.Politicas;
 
 import com.grupo13.trabalhoFinalTecnicas.Entidades.Pedidos;
 

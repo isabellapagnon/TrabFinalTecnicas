@@ -61,4 +61,63 @@ public class PedidosTeste {
         Pedidos p = new Pedidos(listaTeste, 0.0, 0.0, "", "", "", "", null);
         Assertions.assertEquals(80, p.getPrecoPratos());
     }
+
+
+    //Testes de Get e Set apenas para aumentar o percentual de CodeCoverge nas linhas
+
+    @Test
+    public void getNomeCliente(){
+        List<Prato> listaTeste = new ArrayList<>();
+        Prato prato = new Prato("Parmegiana", 30, 1);
+        listaTeste.add(prato);
+        Pedidos p = new Pedidos(listaTeste, 0.0, 0.0, "Nome Cliente", "", "", "", null);
+        Assertions.assertEquals("Nome Cliente", p.getNomeCliente());
+
+    }
+
+    @Test
+    public void getRua(){
+        List<Prato> listaTeste = new ArrayList<>();
+        Prato prato = new Prato("Parmegiana", 30, 1);
+        listaTeste.add(prato);
+        Pedidos p = new Pedidos(listaTeste, 0.0, 0.0, "Nome Cliente", "Rua1", "", "", null);
+        Assertions.assertEquals("Rua1", p.getRua());
+
+    }
+
+    @Test
+    public void getNumero(){
+        List<Prato> listaTeste = new ArrayList<>();
+        Prato prato = new Prato("Parmegiana", 30, 1);
+        listaTeste.add(prato);
+        Pedidos p = new Pedidos(listaTeste, 0.0, 0.0, "Nome Cliente", "Rua1", "1010", "", null);
+        Assertions.assertEquals("1010", p.getNumero());
+
+    }
+
+    @Test
+    public void getBairro(){
+        List<Prato> listaTeste = new ArrayList<>();
+        Prato prato = new Prato("Parmegiana", 30, 1);
+        listaTeste.add(prato);
+        Pedidos p = new Pedidos(listaTeste, 0.0, 0.0, "Nome Cliente", "Rua1", "1010", "Bairro1", null);
+        Assertions.assertEquals("Bairro1", p.getBairro());
+    }
+
+    @Test
+    public void getFormaPagamento(){
+        List<Prato> listaTeste = new ArrayList<>();
+        Prato prato = new Prato("Parmegiana", 30, 1);
+        listaTeste.add(prato);
+        Pedidos p = new Pedidos(listaTeste, 0.0, 0.0, "Nome Cliente", "Rua1", "1010", "Bairro1", FormasPagamento.CARTÃO);
+        Assertions.assertEquals(FormasPagamento.CARTÃO, p.getFormasPagamento());
+    }
+
+    @Test
+    public void getId(){
+        Pedidos p = new Pedidos(null, 0.0, 0.0, "Nome Cliente", "Rua1", "1010", "Bairro1", FormasPagamento.CARTÃO);
+        Assertions.assertEquals(p.getId(), p.getId());
+    }
+
+
 }

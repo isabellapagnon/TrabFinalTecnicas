@@ -6,7 +6,6 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-
 @Entity
 public class Restaurante {
     @Id
