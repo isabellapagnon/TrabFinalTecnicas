@@ -1,13 +1,11 @@
 package com.grupo13.trabalhoFinalTecnicas.Entidades;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.util.List;
 
@@ -17,11 +15,11 @@ import java.util.List;
 public class Pedidos {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private int iid;
 
-    @Column
-    @JoinColumn(name = "id.prato")
+    @JoinColumn(name = "prato_id")
     @OneToMany
+    //@JoinTable(name = "prato")
     private List<Prato> pratos;
 
     private double precoPratos;
@@ -52,12 +50,12 @@ public class Pedidos {
 
     }
 
-    public static Pedidos createNewPedido(String nomeCliente, String rua, String numero, String bairro, FormasPagamento formasPagamento){
+    public Pedidos createNewPedido(String nomeCliente, String rua, String numero, String bairro, FormasPagamento formasPagamento){
         return new Pedidos( null, 0.0, 0.0, nomeCliente, rua, numero, bairro, formasPagamento);
     }
 
     public int getId(){
-        return id;
+        return iid;
     }
     
     public List<Prato> getPratos(){

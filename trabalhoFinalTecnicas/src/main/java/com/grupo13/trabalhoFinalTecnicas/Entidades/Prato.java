@@ -54,6 +54,7 @@ public class Prato {
     public void setQuantidade(int quant) {
         quantidade = quantidade + quant;
         this.quantidade = quantidade;
+
     }
 
     public void setPreco(double preco) {

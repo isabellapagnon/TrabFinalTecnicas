@@ -9,5 +9,5 @@ INSERT INTO Prato (id,nome,preco,quantidade) VALUES (8,'tagliatelle al ragu',26.
 INSERT INTO Prato (id,nome,preco,quantidade) VALUES (9,'Porção de batatas gratinadas',10.00,1);
 
 
--- INSERT INTO Pedidos(nomeCliente,rua,numero,formasPagamento) VALUES ('Cliente1','Rua1','1010',DINHEIRO);
--- UPDATE Pedidos SET pratos = (SELECT * FROM Prato WHERE Prato.id = 1) WHERE Id = 100;
+-- INSERT INTO Pedidos(iid,prato_id,preco_pratos,preco_frete,nome_cliente,bairro,rua,numero,formas_pagamento) VALUES (100,1,0.0,15.0,'Cliente1','Bairro1','Rua1','1010',12);
+-- UPDATE Pedidos SET id.prato = (SELECT * FROM Prato WHERE id.prato = 1) WHERE Id = 100;

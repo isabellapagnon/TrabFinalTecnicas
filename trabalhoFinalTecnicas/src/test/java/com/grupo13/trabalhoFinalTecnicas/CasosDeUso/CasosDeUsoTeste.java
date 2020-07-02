@@ -5,6 +5,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.grupo13.trabalhoFinalTecnicas.CasosDeUso.Politicas.PoliticaCustoTotal;
+import com.grupo13.trabalhoFinalTecnicas.CasosDeUso.Politicas.PoliticaDesconto;
+import com.grupo13.trabalhoFinalTecnicas.CasosDeUso.Politicas.PoliticaFrete;
+import com.grupo13.trabalhoFinalTecnicas.CasosDeUso.Politicas.PoliticaPedidoMaximo;
 import com.grupo13.trabalhoFinalTecnicas.Entidades.FormasPagamento;
 import com.grupo13.trabalhoFinalTecnicas.Entidades.Pedidos;
 import com.grupo13.trabalhoFinalTecnicas.Entidades.Prato;
